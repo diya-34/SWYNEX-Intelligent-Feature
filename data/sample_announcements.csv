@@ -1,0 +1,51 @@
+text,category,priority
+"The End-Semester Examination timetable for B.Tech Semester 5 is officially released. All students must download admit cards before Friday 5:00 PM at https://exam.university.edu.",Exam,High
+"Practical laboratory examinations for Computer Networks and Operating Systems will commence from Monday, November 10 at 9:00 AM. Hall ticket mandatory.",Exam,High
+"Notice regarding exam timetable clash: Students having two examination papers on the same day must report to the Controller of Examinations before 4:00 PM tomorrow with printed hall tickets.",Exam,High
+"Backlog and supplementary examination registration forms are now open. Final submission deadline with regular exam fee is October 25, 2026.",Exam,Medium
+"Mid-Semester Examination seating arrangements for third year students have been published on the departmental notice board outside Room 204.",Exam,Low
+"Final year B.Tech viva voce examination for Capstone Project Phase 1 is scheduled for December 2 to December 5 in Conference Hall A. Contact coe@university.edu for queries.",Exam,Medium
+"Oral examination for German and French language elective courses is scheduled on Thursday afternoon starting at 2:30 PM in Room 410.",Exam,Medium
+"Final reminder: Examination registration with late fine of Rs 500 will close strictly tonight at 11:59 PM via ERP portal.",Exam,High
+"Students requiring a scribe or extra time for upcoming semester exams must submit medical certificates to Room 102 by October 30.",Exam,Medium
+"Re-evaluation and re-checking applications for Semester 4 results must be submitted online through the student ERP portal before October 28.",Exam,Medium
+"Submission of Machine Learning Assignment 3 on Neural Networks is due tomorrow by 11:59 PM on Google Classroom. Late submissions will receive zero marks.",Assignment,High
+"Software Engineering Project Phase 2 deliverable: Submit your GitHub repository link and report on Canvas before Sunday at 6:00 PM.",Assignment,High
+"Database Management Systems homework assignment on SQL query optimization has been posted. Please submit your solutions by November 15.",Assignment,Medium
+"Reminder: Compiler Design mini-project documentation must be uploaded to the LMS portal before Friday 5:00 PM to avoid penalty.",Assignment,High
+"Data Structures Lab Assignment 4: Complete the binary tree implementation and submit the zip archive to turnitin@college.ac.in before next Wednesday.",Assignment,Medium
+"Environmental Studies assignment topic allocation has been updated. Final submission deadline is set for December 10, 2026.",Assignment,Low
+"Mobile Application Development Assignment 2: Build a Flutter login interface and submit the video walkthrough before Monday 10:00 AM.",Assignment,Medium
+"Annual Inter-College Hackathon 'HackSphere 2026' registration is now open! Win cash prizes up to Rs 1,00,000. Register at https://hacksphere.dev before November 5.",Event,Medium
+"The Department of Computer Science is hosting a guest lecture on 'Generative AI and Large Language Models' on Friday at 3:00 PM in the Main Auditorium.",Event,Low
+"Auditions for the college music and drama society 'Rhythm 2026' will be conducted on Saturday morning at 10:00 AM in the Student Activity Center.",Event,Low
+"National Level Robotics Competition: Teams must register before October 31 at https://robotics-summit.org. Contact robotics@college.edu for details.",Event,Medium
+"TEDxUniversity 2026 theme announced. Early bird delegate passes are available on the student council portal until Friday midnight.",Event,Low
+"Annual Sports Meet 2026: Inter-branch football and cricket tournament fixtures are out. Captains meeting today at 4:30 PM on the sports ground.",Event,Medium
+"Workshop on Cloud Computing and AWS Architecture on Saturday, November 14 from 10:00 AM to 4:00 PM. Limited seats, register immediately.",Event,Medium
+"Microsoft Campus Placement Drive 2026: Eligible B.Tech 7th semester students with CGPA >= 8.0 must register on the CDC portal before tomorrow 12:00 PM.",Placement,High
+"Google Software Engineering campus recruitment shortlisted candidates list announced. Technical interviews begin Wednesday 9:00 AM in Placement Cell.",Placement,High
+"Amazon On-Campus Recruitment Drive: Online coding assessment is scheduled for this Saturday from 2:00 PM to 4:00 PM. Check your college email for login credentials.",Placement,High
+"TCS Digital and Ninja campus hiring registration link is live. All final year students must submit their resumes at https://careers.tcs.com before November 8.",Placement,Medium
+"Placement training session on Resume Building and Mock Technical Interviews will be held tomorrow at 3:00 PM in Seminar Hall 2.",Placement,Medium
+"Deloitte Consulting campus hiring PPT session is scheduled for Friday at 11:00 AM. Attendance is strictly compulsory for shortlisted students.",Placement,High
+"Goldman Sachs placement drive: Selected students must submit their verified marksheets and degree verification forms by October 29 to placement@college.edu.",Placement,High
+"Summer Research Internship 2027 at Indian Institute of Science (IISc): Applications open for 3rd year students. Apply before December 15 with recommendation letters.",Internship,Medium
+"Winter Internship Opportunity at Tech Mahindra: 6-month industrial internship with a stipend of Rs 25,000/month. Apply before November 10 at intern@techmahindra.com.",Internship,High
+"DRDO research lab winter internship notification: Students interested in embedded systems and aerospace computing must submit CVs to drdo-intern@gov.in by October 30.",Internship,High
+"Google Summer of Code (GSoC) mentoring and guidance session will be organized by Open Source Club this Thursday at 5:00 PM in Lab 3.",Internship,Low
+"FinTech startup internship opening for full-stack developers: 3-month remote internship with Rs 20,000 stipend. Apply at https://fintech-careers.io/intern before Friday.",Internship,Medium
+"Undergraduate research internship program (UGRIP) call for proposals is now open. Faculty project list uploaded on the department portal. Deadline: November 20.",Internship,Low
+"College will remain closed on Monday, October 26 on account of Dussehra festival. All classes, labs, and office operations will be suspended.",Holiday,Medium
+"Due to heavy rainfall warning issued by the meteorological department, the university will remain closed tomorrow, Friday. Online classes will continue as scheduled.",Holiday,High
+"Public Holiday Notice: The institute will observe a holiday on Wednesday, November 11 on the occasion of Diwali. Hostel mess will operate on holiday schedule.",Holiday,Low
+"Winter break for undergraduate and postgraduate students is declared from December 24, 2026 to January 4, 2027. Classes resume on January 5.",Holiday,Low
+"Emergency Closure: Due to severe cyclone alert, the campus will be evacuated today by 2:00 PM. All evening laboratories and sports activities are cancelled.",Holiday,High
+"Notice: The college library will observe extended operating hours till 11:00 PM during the preparation week starting Monday.",General,Low
+"All students must collect their renewed biometric smart ID cards from the administrative office counter 4 between 10:00 AM and 1:00 PM.",General,Low
+"Notice regarding hostel mess fee payment: Semester 5 mess dues must be cleared online before November 5 to avoid late fine charges.",General,Medium
+"Campus Wi-Fi maintenance is scheduled for Sunday between 2:00 AM and 6:00 AM. Internet access will be temporarily interrupted.",General,Low
+"Lost and Found: A black Lenovo laptop charger was found in Room 302. Owner may claim it from the Department Security Desk upon verification.",General,Low
+"Students requiring bonafide certificates for bus concession or education loan must apply via the student ERP portal before Friday 3:00 PM.",General,Low
+"Urgent notice: Vehicle parking sticker distribution for two-wheelers and four-wheelers will close on Friday. Unregistered vehicles will be fined.",General,Medium
+"National Scholarship Portal (NSP) post-matric scholarship verification window closes on November 15. Submit hard copies to Student Welfare Office.",General,Medium

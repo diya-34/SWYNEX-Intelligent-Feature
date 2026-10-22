@@ -1,0 +1,17 @@
+test_id,description,text,expected_category,predicted_category,category_match,confidence,expected_priority,predicted_priority,priority_match,priority_score,deadlines_found,urls_found,emails_found,summary_len,is_edge_case
+TC-01,Standard Exam with Imminent Deadline,The End-Semester Examination timetable for B.Tech Semester 5...,Exam,Exam,True,0.503,High,High,True,85,2,1,0,177,False
+TC-02,Exam Schedule Clash Notice,Notice regarding exam timetable clash: Students having two e...,Exam,Exam,True,0.489,High,High,True,85,2,0,0,190,False
+TC-03,Coding Assignment Submission,Submission of Machine Learning Assignment 3 on Neural Networ...,Assignment,Assignment,True,0.41,High,High,True,95,2,0,0,153,False
+TC-04,Long-Term Project Assignment,Database Management Systems homework assignment on SQL query...,Assignment,Assignment,True,0.439,Medium,Medium,True,35,1,1,1,161,False
+TC-05,Inter-College Hackathon Event,Annual Inter-College Hackathon 'HackSphere 2026' registratio...,Event,Event,True,0.426,Medium,Medium,True,35,1,1,0,128,False
+TC-06,Academic Guest Lecture Event,The Department of Computer Science is hosting a guest lectur...,Event,Event,True,0.391,Low,Low,True,10,0,0,0,164,False
+TC-07,Top Tier Campus Placement Drive,Microsoft Campus Placement Drive 2026: Eligible B.Tech 7th s...,Placement,Placement,True,0.429,High,High,True,65,2,0,0,151,False
+TC-08,Campus Placement Training,Placement training session on Resume Building and Mock Techn...,Placement,Placement,True,0.458,Medium,High,False,70,0,0,0,127,False
+TC-09,Industrial Stipend Internship,Winter Internship Opportunity at Tech Mahindra: 6-month indu...,Internship,Internship,True,0.433,High,Medium,False,45,1,1,1,165,False
+TC-10,Research Internship Call,Summer Research Internship 2027 at Indian Institute of Scien...,Internship,Internship,True,0.413,Medium,Medium,True,35,1,0,0,165,False
+TC-11,Festival Holiday Circular,"College will remain closed on Monday, October 26 on account ...",Holiday,Holiday,True,0.373,Medium,Low,False,25,0,0,0,141,False
+TC-12,Emergency Weather Closure,"Emergency Closure: Due to severe cyclone alert, the campus w...",Holiday,Holiday,True,0.332,High,High,True,100,2,0,0,156,False
+TC-13,Routine Administrative Notice,All students must collect their renewed biometric smart ID c...,General,General,True,0.425,Low,Low,True,0,0,0,0,151,False
+TC-14,Edge Case: Missing Deadline / Ambiguous Timing,General guidelines for upcoming open elective courses will b...,General,General,True,0.274,Low,Low,True,10,0,0,0,151,True
+TC-15,Edge Case: Misleading Urgency Keyword in Routine Context,The urgent care first-aid health clinic is located on the gr...,General,General,True,0.246,Low,Low,True,0,0,0,0,152,True
+TC-16,Edge Case: Unknown Gibberish Text,asdfghjk qwertyuiop zxcvbnm kljhgfds aoiweury 1234567890 tes...,General,General,True,0.196,Low,Low,True,15,0,0,0,89,True
