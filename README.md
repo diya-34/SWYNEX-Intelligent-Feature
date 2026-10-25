@@ -1,119 +1,115 @@
+# SWYNEX Intelligent Feature
 # AI-Powered Student Announcement Intelligence System
-### SWYNEX Internship Task 3: Intelligent Feature
-**Author:** Diya Patel  
-**Repository Name:** SWYNEX-Intelligent-Feature  
 
-![Python 3.9+](https://img.shields.io/badge/Python-3.9%2B-blue.svg)
-![Streamlit](https://img.shields.io/badge/Streamlit-1.30%2B-red.svg)
-![scikit-learn](https://img.shields.io/badge/scikit--learn-1.3%2B-orange.svg)
-![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)
-![Tests: 28/28 Passing](https://img.shields.io/badge/Tests-28%2F28%20Passing-brightgreen.svg)
+An intelligent web application that analyzes college announcements, identifies their categories, detects priority levels, extracts important information, and generates concise summaries.
 
----
+This project is developed as part of **Task 3 – Intelligent Feature** for the **SWYNEX internship**.
 
-## 📌 Project Overview & Objective
-
-College students receive hundreds of unstructured announcements every semester via WhatsApp groups, emails, and student portals. These notices contain vital academic deadlines, exam notices, placement tests, and assignment submissions buried inside lengthy administrative prose.
-
-The **AI-Powered Student Announcement Intelligence System** is an end-to-end intelligent NLP solution developed for **SWYNEX Internship Task 3**. It automatically analyzes college circulars and extracts actionable intelligence without requiring paid APIs or third-party cloud services.
-
-### 🌟 Key Capabilities
-1. **7-Category Text Classification**: Classifies notices into `Exam`, `Assignment`, `Event`, `Placement`, `Internship`, `Holiday`, and `General`.
-2. **Explainable Priority Detection**: Assigns `High`, `Medium`, or `Low` priority with human-understandable reasoning based on deadline proximity and urgency factors.
-3. **Important Information Extraction**: Extracts dates, deadlines, URLs, emails, and action keywords using regex heuristics with clear fallback messaging when items are absent.
-4. **Zero-Hallucination Extractive Summary**: Generates concise 2-sentence summaries directly from source text without fabricating non-existent information.
-5. **Fault-Tolerant Error Handling**: Gracefully handles empty inputs, whitespace, massive text (> 5,000 characters), and out-of-vocabulary gibberish.
-6. **Empirical Evaluation**: Benchmark evaluation on 16 structured test cases providing genuine scikit-learn metrics (Accuracy, Precision, Recall, F1).
+[![Python](https://img.shields.io/badge/Python-3.9%2B-blue.svg)](https://www.python.org/)
+[![Streamlit](https://img.shields.io/badge/Streamlit-1.30%2B-red.svg)](https://streamlit.io/)
+[![Scikit-Learn](https://img.shields.io/badge/scikit--learn-1.3%2B-orange.svg)](https://scikit-learn.org/)
+[![Pytest](https://img.shields.io/badge/pytest-28%2F28%20passing-brightgreen.svg)](https://pytest.org/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
 ---
 
-## 🏗️ System Architecture & Workflow
+## Overview
 
-```
-+-------------------------------------------------------------------------+
-|                       Raw Announcement Text Input                       |
-+-------------------------------------------------------------------------+
-                                     |
-                                     v
-+-------------------------------------------------------------------------+
-|                  Input Validation & Sanitization Layer                  |
-|    - Null / Empty / Whitespace Checks                                   |
-|    - Type Safety & Boundary Guards (5,000 char safety cap)              |
-+-------------------------------------------------------------------------+
-                                     |
-         +---------------------------+---------------------------+
-         |                           |                           |
-         v                           v                           v
-+------------------+       +-------------------+       +-------------------+
-|  Classification  |       | Priority Detector |       | Entity Extractor  |
-|  - TF-IDF Vector |       | - Urgency Keywords|       | - Explicit Dates  |
-|  - Logistic Regr |       | - Time Proximity  |       | - Cutoff Deadlines|
-|  - Rule Baseline |       | - Explainable Rsn |       | - URLs & Emails   |
-+------------------+       +-------------------+       +-------------------+
-         |                           |                           |
-         +---------------------------+---------------------------+
-                                     |
-                                     v
-+-------------------------------------------------------------------------+
-|                   Zero-Hallucination Summarizer                         |
-|    - Word Frequency & Lead-Sentence Scoring                             |
-|    - Action Signal Bonuses & Verbatim Preservation                      |
-+-------------------------------------------------------------------------+
-                                     |
-                                     v
-+-------------------------------------------------------------------------+
-|              Interactive Streamlit Intelligence Dashboard               |
-+-------------------------------------------------------------------------+
-```
+College students receive announcements about examinations, assignments, placements, internships, events, and holidays. Finding the most important information quickly can be challenging.
+
+The **Student Announcement Intelligence System** helps users understand announcements by analyzing their text and presenting relevant information in a simple, intuitive dashboard.
 
 ---
 
-## 📂 Project Structure
+## Features
+
+- **Announcement Classification**: Categorizes announcements into `Exam`, `Assignment`, `Event`, `Placement`, `Internship`, `Holiday`, and `General` using a hybrid TF-IDF + Logistic Regression machine learning model with rule fallback.
+- **Priority Detection**: Identifies `High`, `Medium`, and `Low` priority based on urgency, deadlines, and relevant keywords with explainable reasoning.
+- **Information Extraction**: Extracts available dates, deadlines, URLs, email addresses, and important keywords with transparent missing-item notifications.
+- **Intelligent Summarization**: Generates a concise summary of the announcement using a lightweight local zero-hallucination extractive approach.
+- **Error Handling**: Handles empty inputs, missing information, invalid inputs, whitespace, very long text, and unexpected errors without crashing.
+- **Evaluation Examples**: Tests the system using sample announcements and compares expected labels with predicted results.
+- **Evaluation Metrics**: Reports suitable metrics such as accuracy, precision, recall, and F1-score when applicable.
+- **Interactive Dashboard**: Provides a simple web interface using Streamlit with real-time feedback and live benchmark execution.
+
+---
+
+## Technologies Used
+
+- **Python**: Core programming language.
+- **Streamlit**: Interactive web dashboard.
+- **Scikit-learn**: TF-IDF vectorization, text classification, and evaluation metrics computation.
+- **Pandas**: Labeled announcements dataset handling and tabular metrics reporting.
+- **NumPy**: Numerical calculations and probability aggregations.
+- **Regular Expressions**: Rule matching for dates, deadlines, email addresses, and URLs.
+- **Pytest**: Automated test suite for unit, integration, and edge-case verification.
+
+---
+
+## Project Structure
 
 ```
-SWYNEX-Intelligent-Feature2/
-├── app.py                      # Interactive Streamlit Web Dashboard
+SWYNEX-Intelligent-Feature/
+│
+├── app.py
+├── requirements.txt
+├── README.md
+├── .gitignore
+│
 ├── src/
-│   ├── __init__.py             # Package init & input validation functions
-│   ├── classifier.py           # Hybrid ML + Rule-based Announcement Classifier
-│   ├── priority_detector.py    # Urgency analysis & priority reasoning engine
-│   ├── information_extractor.py# Regex date, deadline, email, and URL extractor
-│   └── summarizer.py           # Extractive zero-hallucination text summarizer
+│   ├── __init__.py
+│   ├── classifier.py
+│   ├── priority_detector.py
+│   ├── information_extractor.py
+│   └── summarizer.py
+│
 ├── data/
-│   └── sample_announcements.csv# 50 labeled multi-category training announcements
+│   └── sample_announcements.csv
+│
 ├── tests/
-│   ├── test_classifier.py      # Automated tests for classifier, priority & extractor
-│   └── test_error_handling.py  # Tests for edge cases, nulls, long text & safety
-├── evaluation/
-│   ├── evaluate.py             # Empirical benchmark evaluation script
-│   └── evaluation_results.csv  # Benchmark run results & metric exports
-├── requirements.txt            # Python library dependencies
-├── README.md                   # Comprehensive technical documentation
-└── .gitignore                  # Git ignore rules
+│   ├── test_classifier.py
+│   └── test_error_handling.py
+│
+└── evaluation/
+    ├── evaluate.py
+    └── evaluation_results.csv
 ```
+
+> **Note:** The structure above describes the intended organization. Keep the README consistent with the files actually present in your repository.
 
 ---
 
-## ⚙️ Installation & Setup Guide
+## Installation and Setup
 
-### 1. Prerequisites
-- Python 3.9, 3.10, 3.11, or 3.12 installed on your machine.
-- Git installed.
+### 1. Clone the Repository
+```bash
+git clone https://github.com/diya-34/SWYNEX-Intelligent-Feature.git
+```
+*(Replace `diya-34` with your GitHub username if cloning a fork).*
 
 ### 2. Navigate to the Project Directory
 ```bash
-cd "c:\Users\power\OneDrive\Desktop\sem 5\SWYNEX-Intelligent-Feature2"
+cd SWYNEX-Intelligent-Feature
 ```
 
-### 3. Create and Activate Virtual Environment (Recommended)
+### 3. Create a Virtual Environment
 ```bash
-# Windows PowerShell
-python -m venv venv
-.\venv\Scripts\activate
+python -m venv .venv
+```
 
-# Linux / macOS
-python3 -m venv venv
-source venv/bin/activate
+Activate it on **Windows PowerShell**:
+```powershell
+.\.venv\Scripts\Activate.ps1
+```
+
+If activation is blocked, use **Command Prompt**:
+```cmd
+.venv\Scripts\activate.bat
+```
+
+Or on **macOS / Linux**:
+```bash
+source .venv/bin/activate
 ```
 
 ### 4. Install Dependencies
@@ -121,104 +117,124 @@ source venv/bin/activate
 pip install -r requirements.txt
 ```
 
----
-
-## 🚀 Running the Application
-
-To launch the interactive Streamlit dashboard:
-
+### 5. Run the Application
 ```bash
 streamlit run app.py
 ```
-
-The web dashboard will automatically open in your default browser at `http://localhost:8501`.
+Open the local URL displayed in the terminal (typically `http://localhost:8501`) to use the application.
 
 ---
 
-## 🧪 Running Automated Tests
+## How to Use
 
-Run pytest to verify all intelligence modules, edge-case handlers, and validators:
+1. **Launch the Streamlit application** using `streamlit run app.py`.
+2. **Enter a college announcement** in the input text area or **select a sample announcement** from the dropdown menu.
+3. Click the **Analyze Announcement** button.
+4. **Review the predicted category** and **priority level** with confidence scores and reasoning.
+5. **Check extracted dates, deadlines, URLs, email addresses, and keywords**.
+6. **Read the generated summary** of key actionable points.
+7. Try different announcements to observe how the system responds to different inputs and urgency levels.
 
+---
+
+## Testing
+
+Run the automated tests:
 ```bash
-pytest -v
+pytest -q
 ```
+*Result: 28 passing unit and edge-case tests validating classifier accuracy, priority logic, entity extraction, and error safety.*
 
-All unit and integration tests are located in the `tests/` directory:
-- `tests/test_classifier.py`: Validates 7 categories, probabilities, priority detection, information extraction, and summarizer.
-- `tests/test_error_handling.py`: Validates empty input, whitespace, long text truncation, gibberish strings, and missing fields.
-
----
-
-## 📊 Empirical Evaluation & Benchmark Results
-
-Run the standalone evaluation benchmark script:
-
+Run the evaluation script:
 ```bash
 python evaluation/evaluate.py
 ```
+The evaluation compares expected labels with model predictions and reports appropriate metrics. Actual results depend on the implementation and test dataset.
 
-### Evaluation Methodology
-The evaluation suite contains **16 structured test announcements** covering:
-- All 7 academic categories (`Exam`, `Assignment`, `Event`, `Placement`, `Internship`, `Holiday`, `General`).
-- All 3 priority ratings (`High`, `Medium`, `Low`).
-- Complex edge cases: ambiguous deadlines, misleading keywords, and unknown/gibberish text.
+---
 
-### Benchmark Metrics Table
+## Error Handling
+
+The system is designed to handle cases such as:
+- **Empty or whitespace-only announcements**: Detected gracefully before processing, returning friendly warning messages without crashing.
+- **Missing dates, URLs, or email addresses**: Gracefully reports missing status (e.g., *"No explicit deadline detected"*, *"No contact email addresses found"*).
+- **Unknown or ambiguous announcement categories**: Defaults safely to `General` with calibrated probability scores.
+- **Unexpected input formats**: Input validation guards against `None`, numeric types, and overly long inputs (>5,000 characters safely truncated).
+- **Classification mistakes and misleading urgency keywords**: Priority detector inspects contextual dampening phrases to prevent false high-priority alarms.
+
+The system displays understandable messages and avoids crashing when it encounters invalid input.
+
+---
+
+## Evaluation Methodology
+
+The system is evaluated using representative announcements across all 7 categories (`Exam`, `Assignment`, `Event`, `Placement`, `Internship`, `Holiday`, and `General`) and all 3 priority levels (`High`, `Medium`, `Low`).
+
+### Evaluation Metrics Summary
+
 | Metric | Score | Description |
 |---|---|---|
-| **Category Classification Accuracy** | **100.00%** | Correct classification across all 16 benchmark test cases |
-| **Macro Precision** | **100.00%** | Unweighted average precision across all 7 categories |
-| **Macro Recall** | **100.00%** | Unweighted average recall across all 7 categories |
+| **Classification Accuracy** | **100.00%** | Accuracy across 16 benchmark announcements |
+| **Macro Precision** | **100.00%** | Unweighted average precision across all categories |
+| **Macro Recall** | **100.00%** | Unweighted average recall across all categories |
 | **Macro F1-Score** | **100.00%** | Harmonic mean of precision and recall |
 | **Priority Accuracy** | **81.25%** | Agreement between predicted and expected urgency priority |
 
-Detailed per-test-case predictions, confidence scores, and entity metrics are saved in `evaluation/evaluation_results.csv`.
+### Per-Category Performance Breakdown
+
+| Category | Precision | Recall | F1-Score | Support |
+|---|---|---|---|---|
+| **Exam** | 1.00 | 1.00 | 1.00 | 2.0 |
+| **Assignment** | 1.00 | 1.00 | 1.00 | 2.0 |
+| **Event** | 1.00 | 1.00 | 1.00 | 2.0 |
+| **Placement** | 1.00 | 1.00 | 1.00 | 2.0 |
+| **Internship** | 1.00 | 1.00 | 1.00 | 2.0 |
+| **Holiday** | 1.00 | 1.00 | 1.00 | 2.0 |
+| **General** | 1.00 | 1.00 | 1.00 | 4.0 |
+
+*Evaluation results are generated by running the actual implementation (`python evaluation/evaluate.py`) and saved to `evaluation/evaluation_results.csv`.*
 
 ---
 
-## ⚠️ Limitations & Failure Cases
+## Limitations
 
-Honest documentation of system limitations:
-1. **Hybrid Announcements**: Announcements that simultaneously discuss an assignment submission and an upcoming exam may have split probabilities between `Assignment` and `Exam`.
-2. **Non-Standard Date Formats**: Rare idiosyncratic date notations (e.g., "the fortnight following Michaelmas") without explicit numerals are treated as ambiguous.
-3. **Misleading Urgency in Routine Contexts**: Phrases like "urgent care clinic" contain the word "urgent" but refer to a physical clinic. The rule engine mitigates this via contextual damping, though unusual phrasing may score slightly elevated priority.
-
----
-
-## 📸 Screenshots Instructions
-
-When preparing your internship submission report or presentation:
-1. Start the app using `streamlit run app.py`.
-2. Take a screenshot of the **Hero Banner and Sample Selector**.
-3. Select sample announcement #1 (`End-Semester Timetable`) and capture the **Intelligence Summary Card** (showing Category, Priority Reason, Extracted Deadlines, and URLs).
-4. Navigate to the **Empirical Benchmark & Evaluation** tab, click **Run Live System Benchmark**, and capture the **KPI Metrics & Test Results Table**.
+- **Priority detection**: May depend on predefined keywords and rule heuristics.
+- **Ambiguous announcements**: Notices covering multiple topics (e.g., assignment + holiday) may have split classification probabilities.
+- **Extracted dates and contact details**: May require verification against official university circulars.
+- **Summaries**: May omit fine details from unusually long or complex announcements.
+- **Advisory notice**: The application is intended to assist students, not replace official college notices. Always verify important deadlines and instructions against the original announcement.
 
 ---
 
-## 📤 How to Upload to GitHub
+## Future Improvements
 
-Follow these exact steps to push this project to a new GitHub repository named `SWYNEX-Intelligent-Feature`:
-
-1. **Create Repository on GitHub**:
-   - Go to [GitHub New Repository](https://github.com/new).
-   - Set **Repository name** to: `SWYNEX-Intelligent-Feature`.
-   - Set visibility to **Public** (or Private as required).
-   - Do **NOT** initialize with README or .gitignore (we have already created them).
-
-2. **Initialize Git and Push via Terminal**:
-   ```bash
-   cd "c:\Users\power\OneDrive\Desktop\sem 5\SWYNEX-Intelligent-Feature2"
-   git init
-   git add .
-   git commit -m "feat: SWYNEX Task 3 Intelligent Feature - AI Student Announcement Intelligence System"
-   git branch -M main
-   git remote add origin https://github.com/<YOUR-GITHUB-USERNAME>/SWYNEX-Intelligent-Feature.git
-   git push -u origin main
-   ```
+- Support for Gujarati and other regional languages.
+- Improved machine-learning and fine-tuned transformer classification.
+- Better deadline and urgency detection with calendar synchronization (.ics export).
+- Downloadable announcement reports (PDF / structured JSON).
+- Integration with official college announcement sources (WhatsApp API, Telegram channels, LMS).
+- More comprehensive evaluation datasets.
 
 ---
 
-## 🔒 Security & Privacy Notice
-This project uses **100% local processing** with scikit-learn, regex, and Streamlit. It contains **no API keys, no passwords, no personal access tokens, and no secret credentials**.
-#   S W Y N E X - I n t e l l i g e n t - F e a t u r e  
- 
+## Internship Task
+
+- **Organization**: SWYNEX Technologies
+- **Task**: Task 3 – Intelligent Feature
+- **Project**: AI-Powered Student Announcement Intelligence System
+
+---
+
+## Author
+
+**Diya Patel**  
+B.Tech – Artificial Intelligence and Machine Learning  
+GitHub: [https://github.com/diya-34](https://github.com/diya-34)
+
+---
+
+## Acknowledgment
+
+This project was developed as part of the SWYNEX internship to practice intelligent feature development, error handling, model evaluation, and interactive application design.
+
+#SWYNEX #Internship #ArtificialIntelligence #MachineLearning #Python #Streamlit
