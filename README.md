@@ -85,7 +85,7 @@ SWYNEX-Intelligent-Feature/
 ```bash
 git clone https://github.com/diya-34/SWYNEX-Intelligent-Feature.git
 ```
-*(Replace `diya-34` with your GitHub username if cloning a fork).*
+*(Replace `diya-34` with your GitHub username if cloning a fork).
 
 ### 2. Navigate to the Project Directory
 ```bash
@@ -237,6 +237,8 @@ GitHub: [https://github.com/diya-34](https://github.com/diya-34)
 
 This project was developed as part of the SWYNEX internship to practice intelligent feature development, error handling, model evaluation, and interactive application design.
 
-#SWYNEX #Internship #ArtificialIntelligence #MachineLearning #Python #Streamlit#   S W Y N E X - I n t e l l i g e n t - F e a t u r e .  
- #   S W Y N E X - I n t e l l i g e n t - F e a t u r e .  
+#SWYNEX #Internship #ArtificialIntelligence #MachineLearning #Python #Streamlit#   S W Y N E X - I n t e l l i g e n t - F e a t u r e . 
+ 
+ #   S W Y N E X - I n t e l l i g e n t - F e a t u r e . 
+ 
  
